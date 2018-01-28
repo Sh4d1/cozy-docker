@@ -10,6 +10,8 @@ services:
 
     cozy:
         image: sh4d1/cozy-stack
+        depends_on:
+          - couchdb
         labels:
           - "traefik.enabled=true"
           - "traefik.backend=cozy"
