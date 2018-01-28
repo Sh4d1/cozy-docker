@@ -5,9 +5,22 @@ services:
         image: couchdb:2.1
         volumes:
           - ./couchdb:/opt/couchdb/data
+        networks:
+          - "reverseproxy_default"
 
     cozy:
         image: sh4d1/cozy-stack
+        labels:
+          - "traefik.enabled=true"
+          - "traefik.backend=cozy"
+          - "traefik.frontend.rule=Host:cozy.ptrk.io"
+          - "traefik.port=8080"
+        networks:
+          - "reverseproxy_default"
         
+networks:
+    reverseproxy_default:
+        external:
+            name: reverseproxy_default
 
 
