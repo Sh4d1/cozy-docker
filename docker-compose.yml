@@ -1,0 +1,13 @@
+version: 3
+
+services:
+    couchdb:
+        image: couchdb:2.1
+        volumes:
+          - ./couchdb:/opt/couchdb/data
+
+    cozy:
+        image: sh4d1/cozy-stack
+        
+
+

@@ -1,0 +1,33 @@
+host: 127.0.0.1
+port: 8080
+subdomains: nested
+admin:
+  host: 127.0.0.1
+  port: 6060
+# couchdb parameters
+couchdb:
+  # CouchDB URL - flags: --couchdb-url
+  url: http://couchdb:5984/
+log:
+  level: info
+  syslog: false
+beta:
+    onboarded_redirection: collect/#/discovery/?intro
+    default_redirection: drive/#/files
+    help_link: https://forum.cozy.io/
+    coming_soon:
+      store:
+        editor: 'Cozy'
+        name: 'Store'
+        slug: 'store'
+        category: 'cozy'
+      bank:
+        editor: 'Cozy'
+        name: 'Bank'
+        slug: 'bank'
+        category: 'partners'
+    claudy_actions:
+        - desktop
+        - mobile
+    exclude_konnectors:
+        - a_konnector_slug
